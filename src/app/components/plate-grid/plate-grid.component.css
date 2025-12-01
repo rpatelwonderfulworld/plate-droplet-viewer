@@ -1,0 +1,91 @@
+.plate-grid table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.plate-grid th,
+.plate-grid td {
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  text-align: center;
+  width: 32px;
+  height: 28px;
+  font-family: monospace;
+}
+
+.plate-grid th {
+  background: #f5f5f5;
+}
+.cell {
+  transition: background-color 0.2s ease-in-out;
+}
+
+td.low {
+  background: #d3d3d3;
+}
+
+td.normal {
+  background: #ffffff;
+}
+
+.legend {
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.box {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #999;
+}
+
+.box.low {
+  background: #d3d3d3;
+}
+
+.box.normal {
+  background: #ffffff;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+td, th {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+th {
+  background-color: #fafafa;
+}
+
+td.normal {
+  background-color: #ffffff;
+}
+
+td.low {
+  background-color: #e8e8e8;
+}
+
+tr:hover td {
+  background-color: #f5f5f5; /* row hover */
+}
+
+

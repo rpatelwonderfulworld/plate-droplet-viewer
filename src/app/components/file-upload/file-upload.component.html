@@ -1,0 +1,13 @@
+<div class="file-upload">
+  <label for="fileInput">Plate droplets JSON:</label>
+  <input
+    id="fileInput"
+    type="file"
+    accept=".json"
+    (change)="onFileSelected($event)"
+  />
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+</div>

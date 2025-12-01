@@ -1,0 +1,55 @@
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+mat-card {
+    background: #ffffff !important;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.controls-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.error {
+  color: #b00020;
+  margin-top: 0.5rem;
+}
+
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.legend strong {
+  font-size: 14px;
+}
+
+.legend-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #888;
+}
+
+.box.normal {
+  background-color: #ffffff;
+}
+
+.box.low {
+  background-color: #cccccc;
+}
+

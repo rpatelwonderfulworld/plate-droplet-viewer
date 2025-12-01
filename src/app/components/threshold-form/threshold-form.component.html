@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="threshold-form">
+  <label for="thresholdInput">Droplet threshold (0–500):</label>
+
+  <input
+    id="thresholdInput"
+    type="number"
+    formControlName="threshold"
+    min="0"
+    max="500"
+    step="1"
+  />
+
+  <button type="submit">
+    Update
+  </button>
+
+  <button type="button" (click)="resetThreshold()">
+    Reset
+  </button>
+
+  <div *ngIf="thresholdCtrl?.invalid && thresholdCtrl?.touched" class="error">
+    <span *ngIf="thresholdCtrl?.errors?.['required']">Threshold is required.</span>
+    <span *ngIf="thresholdCtrl?.errors?.['min']">Minimum is 0.</span>
+    <span *ngIf="thresholdCtrl?.errors?.['max']">Maximum is 500.</span>
+    <span *ngIf="thresholdCtrl?.errors?.['notInteger']">Threshold must be a whole number.</span>
+  </div>
+</form>

@@ -1,27 +1,37 @@
-# PlateDropletViewer
+# Plate Droplet Viewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Plate Droplet View is an Angular app that:
+- Loads a plate droplet JSON file
+- Displays wells in a 48- or 96-well grid
+- Highlights Low-droplet wells based on a configurable threshold
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## How to run
 
-## Code scaffolding
+Step 1) Open Bash (command-line interpreter)
+Step 2) Run command: 
+	- npm install
+Step 3) Start Dev Server 
+	- ng serve
+Step 4) Open: http://localhost:4200/ to run application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+Component / service structure
+1.) file-upload – Reads the JSON file and sends parsed data upward.
+2.) plate-grid – Renders the plate grid, applies low-well highlighting, and handles duplicate well indices ("-").
+3.) summary – Shows total wells, low wells, and the current threshold.
+4.) threshold-form – Reactive form for updating the threshold with integer-only validation. Reset returns to the config default.
+5.) services – Config service provides default threshold and centralizes configuration.
+6.) models – TypeScript interfaces for plate and well data.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Key design choices
 
-## Running unit tests
+* Default threshold comes from the config service (no recompilation needed).
+* Threshold form is isolated for cleaner UI logic.
+* Reactive forms enforce proper validation.
+* Reset always restores the config default for predictable behavior.
+* Duplicate well indices in the JSON are surfaced safely using "-" instead of breaking the UI.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Note: Default threshold and JSON file path are managed in the config service
