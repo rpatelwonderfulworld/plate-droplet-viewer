@@ -83,8 +83,7 @@ export class ThresholdFormComponent implements OnChanges {
     this.form.setValue({ threshold: defaultThreshold });
     this.thresholdChange.emit(defaultThreshold);
   }
-
-
+  
   get thresholdCtrl() {
     return this.form.get('threshold');
   }

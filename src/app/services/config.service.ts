@@ -14,6 +14,7 @@ export class ConfigService {
       this.http.get('/assets/app-config.json')
     );
   }
+  
 
   getConfig<T = any>(key: string, fallback?: T): T {
     if (!this.config) {
